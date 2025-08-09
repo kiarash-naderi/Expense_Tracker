@@ -1,13 +1,11 @@
 import express from "express";
+import userRouter from "./routes/User.routes";
 
 const app = express();
-
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("First setup for Expense Tracker");
-});
+app.use("/users", userRouter);
 
 app.listen(3000, () => {
-    console.log("server is running on port 3000")
-})
+  console.log("Server running on port 3000");
+});
